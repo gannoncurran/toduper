@@ -1,0 +1,289 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-m8gr70');
+	src:url('../fonts/icomoon.eot?#iefix-m8gr70') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-m8gr70') format('woff'),
+		url('../fonts/icomoon.ttf?-m8gr70') format('truetype'),
+		url('../fonts/icomoon.svg?-m8gr70#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkmark:before {
+	content: "\e600";
+}
+.icon-cross:before {
+	content: "\e601";
+}
+
+
+#add_todo {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  /*background-color: pink;*/
+}
+
+.toolbox {
+  /*text-align: center;*/
+}
+
+ul {
+	margin: 0px;
+	/*background-color: red;*/
+	height: 20px;
+	padding: 0px;
+}
+
+/*li {
+	margin: 0px;
+}*/
+
+
+.todo h3 {
+	margin: 0px;
+	padding: 0px;
+	width: 490px;
+	/*color: pink;*/
+	/*background-color: green;*/
+}
+
+div .todo {
+	/*background-color: orange;*/
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+.todo h3.complete {
+  text-decoration: line-through;
+  color: #aaaaaa;
+}
+
+body {
+	font-family: 'Arvo', serif;
+	font-weight: 400;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 4em;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 2.25em;
+}
+
+
+h3 {
+	font-weight: 400;
+}
+
+p {
+	font-size: 1.5em;
+	line-height: 1.5em;
+	/*color: #666;*/
+}
+
+.inline {
+	display: inline-block;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clearfix {
+	margin: 0px;
+	padding: 0px;
+	font-size: 0px;
+	clear: both;
+}
+
+.ital {
+	font-style: italic;
+}
+
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 10px 30px;
+  border: 1px dotted black;
+}
+
+.note_box {
+	padding-bottom: 20px;
+}
+
+/*.note_box:hover {
+	background-color: #FCFCFC;
+}*/
+
+.hidden_button_parent:hover .hidden_button {
+	visibility: visible;
+}
+
+.hide {
+	display: none;
+}
+
+.hidden_button {
+	visibility: hidden;
+	font-size: 1em;
+	margin: 0px 0px 20px 30px;
+}
+
+.complete:hover {
+	color: #33CC33;
+	cursor: pointer;
+}
+
+.delete:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.text_button
+{
+	background: none;
+	border: none;
+	color: #666;
+}
+
+.icon_button {
+	font-family: "icomoon";
+	font-size: 20px;
+	color: #cccccc;
+}
+
+.text_button:hover {
+	color: #FF0000;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 2.25em;
+	margin-top: 29px;
+	display: block;
+}
+
+.content {
+	font-weight: 400;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	margin-top: 29px;
+	display: block;
+}
+
+.shift {
+	margin-top: 20px;
+}
+
+.title_field {
+	/*background: none;*/
+	border: none;
+	width: 600px;
+	/*outline: none;*/
+}
+
+.new_todo_field {
+	border: none;
+	border-bottom: solid 1px #666666;
+	width: 500px;
+	height: 50px;
+	font-size: 20px;
+	padding: 0px 10px;
+
+}
+
+.new_todo_button {
+	/*padding-top: 5px;*/
+	line-height: 46px;
+	border: none;
+	width: 50px;
+	height: 50px;
+	font-size: 22px;
+	font-family: icomoon;
+	background-color: #2fb7d9;
+	color: #ffffff;
+	text-align: center;
+}
+
+.new_todo_button:hover {
+	background-color: #33CC33;
+}
+
+button:focus, input:focus, textarea:focus {
+    outline: 0;
+    border: 0;
+}
+
+input.new_todo_field:focus {
+	outline: 0;
+  border: 0;
+	background-color: #FFFFC6;
+  border-bottom: solid 1px #666666;
+
+}
+
+/*input:focus{
+	outline:none;
+}*/
+
+th {
+  text-align: left;
+}
+
+a.unstyled {
+	color: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+/*a:link {
+ color: #666;
+}*/
+
+/*a:visited {
+	color: #666;
+}*/
+
+.blue {
+	color: #2fb7d9;
+}
+
+a:hover {
+	color: #2fb7d9;
+}
+
+
+
+a:active {
+	color: #33c7ec;
+}
+
+.bg_lt_gray {
+	background-color: #F0F0F0;
+}
