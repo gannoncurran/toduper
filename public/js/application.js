@@ -51,7 +51,6 @@ function newTodo (event) {
   var todoContent = todoField.val();
   if (todoContent) {
     todoField.val('');
-    console.log(todoContent);
     var request = $.ajax({
       url: '/add_todo',
       type: 'POST',
