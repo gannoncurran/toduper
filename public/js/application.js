@@ -1,6 +1,9 @@
+var lastUpdate = new Date()
+
 $(document).ready(function() {
   bindEvents();
   populateTodos();
+  initUpdatePolling();
 });
 
 
@@ -25,8 +28,27 @@ function populateTodos () {
   });
 }
 
-function buildTodo(todoName, todoId, completed) {
+function initUpdatePolling () {
+  window.setInterval(checkForUpdates, 10000)
+}
 
+function checkForUpdates() {
+  var request = $.ajax({
+    url: '/update',
+    type: 'get',
+  });
+
+  request.done( function(data) {
+    var dbUpdate = new Date(JSON.parse(data).last_db_change)
+    if (dbUpdate > lastUpdate) {
+      lastUpdate = dbUpdate
+      $('#todo .todo').remove();
+      populateTodos();
+    }
+  });
+}
+
+function buildTodo(todoName, todoId, completed) {
   // gets todoTemplate stored in DOM.
   var todoTemplate = $.trim($('#todo_template').html());
   // Creates an jQueryDOMElement from the todoTemplate.

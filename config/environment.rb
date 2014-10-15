@@ -35,6 +35,10 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+  # Initialize last db change timestamp
+  set :last_db_change, Time.now.getutc
+
 end
 
 # Set up the controllers and helpers
