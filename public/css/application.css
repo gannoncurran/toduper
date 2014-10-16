@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class*="icon"] {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -17,139 +17,159 @@
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-checkmark:before {
-	content: "\e600";
-}
-.icon-cross:before {
-	content: "\e601";
-}
+/* icon HTML entity reference: */
+/* =========================== */
+/* plus:							&#xe602; */
+/* checkmark:					&#xe600; */
+/* delete symbol:			&#xe601; */
 
-
-#add_todo {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  /*background-color: pink;*/
+/* REMOVE BROWSER FOCUS DEFAULTS */
+/* ============================= */
+button:focus, input:focus, textarea:focus {
+    outline: 0;
+    border: 0;
 }
 
-.toolbox {
-  /*text-align: center;*/
+/* TEXT COLOR & STYLE OPTIONS  */
+/* =========================== */
+
+.blue 		{ color: #2FB7D9; }
+.red 			{ color: #B20000; }
+.white 		{ color: #FFFFFF; }
+.yellow 	{ color: #FFFFC6;}
+.green 		{ color: #33CC33;}
+.gray-lt 	{ color: #AAAAAA;}	
+.gray-med	{ color: #666666;}	
+.reg 			{ font-weight: 400; }
+.bold			{ font-weight: 700; }
+.ital 		{	font-style: italic; }
+
+/* POSITIONING HELPERS 				*/
+/* ========================== */
+
+.inline 			{ display: inline; }
+.block 				{ display: block; }
+.inline-block { display: inline-block; }
+.left 				{	float: left; }
+.right 				{	float: right; }
+
+html {
+  box-sizing: border-box;
+	font-family: 'Arvo', serif;
+	font-size: 16px;
+	background-color: #CCCCCC;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-ul {
-	margin: 0px;
-	/*background-color: red;*/
-	height: 20px;
-	padding: 0px;
+/* Add selectors here to prevent text   */
+/* margins from extending beyond parent */
+header, .todo, .controls {
+	overflow: auto;
 }
 
-/*li {
-	margin: 0px;
-}*/
-
-
-.todo h3 {
-	margin: 0px;
-	padding: 0px;
-	width: 490px;
-	/*color: pink;*/
-	/*background-color: green;*/
-}
-
-div .todo {
-	/*background-color: orange;*/
-	height: 40px;
-	margin-bottom: 20px;
-}
-
-.todo h3.complete {
-  text-decoration: line-through;
-  color: #aaaaaa;
+header {
+	padding: 0;
 }
 
 body {
-	font-family: 'Arvo', serif;
-	font-weight: 400;
+	max-width: 600px;
+	margin: 0 auto;
+	background-color: #EEEEEE;
 }
 
-h1 {
-	font-weight: 700;
-	font-size: 4em;
+.header-wrapper {
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 1rem #888888;
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 1rem;
+	padding: 0 1rem 1rem 1rem;
 }
 
-h2 {
-	font-weight: 700;
-	font-size: 2.25em;
+.toduper-title {
+	font-size: 3.7rem;
+	margin: .5rem 0 .3rem 0;
 }
 
-
-h3 {
-	font-weight: 400;
+.new-todo-form {
+	width: 100%;
 }
 
-p {
-	font-size: 1.5em;
-	line-height: 1.5em;
-	/*color: #666;*/
+.new-todo-field {
+	display: block;
+	width: 100%;
+	border-radius: 0;
+	height: 3.5rem;
+	padding: .5rem;
+	margin: 0 0 1rem 0;
+	font-size: 1.2rem;
+	background-color: #FFFFFF;
+	border: 0;
+	outline: 0;
+	border-bottom: solid 1px #666666;
 }
 
-.inline {
-	display: inline-block;
+.new-todo-field:focus {
+	background-color: #FFFFC6;
+	border-bottom: solid 1px #666666;
 }
 
-.left {
-	float: left;
-}
-
-.right {
+.new-todo-button {
+	font-size: 2rem;
+	margin: 0;
+	padding: 0;
+	background-color: #2FB7D9;
+	border: none;
+	width: 4rem;
+	height: 4rem;
+	text-align: center;
+	border-radius: 0;
 	float: right;
 }
 
-.clearfix {
-	margin: 0px;
-	padding: 0px;
-	font-size: 0px;
-	clear: both;
+.new-todo-button:hover {
+	background-color: #33CC33;
 }
 
-.ital {
-	font-style: italic;
+#todo-list {
+	padding: 2rem 1rem 1rem 1rem;
 }
 
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 10px 30px;
-  border: 1px dotted black;
+.todo {
+	width: 100%;
+	padding: 0;
+	margin: 0 0 2rem 0;
 }
 
-.note_box {
-	padding-bottom: 20px;
+.todo-content {
+	font-size: 1.15rem;
+	margin: 0 0 .5rem 0;
+	line-height: 1.5rem;
+	color: #333333;
 }
 
-/*.note_box:hover {
-	background-color: #FCFCFC;
-}*/
-
-.hidden_button_parent:hover .hidden_button {
-	visibility: visible;
+.todo-content.completed {
+	text-decoration: line-through;
+	color: #AAAAAA;
 }
 
-.hide {
-	display: none;
+.controls {
+	font-size: 1.75rem;
+	margin: 0;
+	height: 100%;
+	padding: 0;
+	color: #CCCCCC;
 }
 
-.hidden_button {
-	visibility: hidden;
-	font-size: 1em;
-	margin: 0px 0px 20px 30px;
+.controls .delete {
+	margin-left: 1rem;
 }
 
 .complete:hover {
@@ -158,132 +178,10 @@ p {
 }
 
 .delete:hover {
-	color: red;
+	color: #B20000;
 	cursor: pointer;
 }
 
-.text_button
-{
-	background: none;
-	border: none;
-	color: #666;
-}
-
-.icon_button {
-	font-family: "icomoon";
-	font-size: 20px;
-	color: #cccccc;
-}
-
-.text_button:hover {
-	color: #FF0000;
-}
-
-.title {
-	font-weight: 700;
-	font-size: 2.25em;
-	margin-top: 29px;
-	display: block;
-}
-
-.content {
-	font-weight: 400;
-	font-size: 1.5em;
-	line-height: 1.5em;
-	margin-top: 29px;
-	display: block;
-}
-
-.shift {
-	margin-top: 20px;
-}
-
-.title_field {
-	/*background: none;*/
-	border: none;
-	width: 600px;
-	/*outline: none;*/
-}
-
-.new_todo_field {
-	border: none;
-	border-bottom: solid 1px #666666;
-	width: 500px;
-	height: 50px;
-	font-size: 20px;
-	padding: 0px 10px;
-
-}
-
-.new_todo_button {
-	/*padding-top: 5px;*/
-	line-height: 46px;
-	border: none;
-	width: 50px;
-	height: 50px;
-	font-size: 22px;
-	font-family: icomoon;
-	background-color: #2fb7d9;
-	color: #ffffff;
-	text-align: center;
-}
-
-.new_todo_button:hover {
-	background-color: #33CC33;
-}
-
-button:focus, input:focus, textarea:focus {
-    outline: 0;
-    border: 0;
-}
-
-input.new_todo_field:focus {
-	outline: 0;
-  border: 0;
-	background-color: #FFFFC6;
-  border-bottom: solid 1px #666666;
-
-}
-
-/*input:focus{
-	outline:none;
-}*/
-
-th {
-  text-align: left;
-}
-
-a.unstyled {
-	color: inherit;
-}
-
-a {
-	text-decoration: none;
-	color: #666;
-}
-
-/*a:link {
- color: #666;
-}*/
-
-/*a:visited {
-	color: #666;
-}*/
-
-.blue {
-	color: #2fb7d9;
-}
-
-a:hover {
-	color: #2fb7d9;
-}
-
-
-
-a:active {
-	color: #33c7ec;
-}
-
-.bg_lt_gray {
-	background-color: #F0F0F0;
+.hide {
+	display: none;
 }

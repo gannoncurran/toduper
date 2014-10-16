@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,700italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/application.css">
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title>Toduper!</title>
-<body>
-  <div class='container'>
-    <h1 class="ital inline blue">Toduper!</h1>
 
-	  <div id="add_todo">
-		  <div class="toolbox">
-		    <form>
-		      <input type="text" class="new_todo_field" placeholder="Put your new todo item here!"/>
-          <input type="submit" class="new_todo_button inline right" value="&#xe602;"/>
-		    </form>
-		  </div>
-		</div>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="utf-8">
+</head>
+<body ontouchstart="">
 
-  </div>
+  <header>
+    <div class="header-wrapper">
+      <h1 class="toduper-title blue bold ital">Toduper!</h1>
+      <div class="new-todo-form">
+        <form>
+          <input class="new-todo-field" type="text" placeholder="Put your new todo item here!"/>
+          <input class="new-todo-button white icon"type="submit" value="&#xe602;"/>
+        </form>
+      </div>
+    </div>
+  </header>
+
   <%= yield %>
+
 </body>
 </html>

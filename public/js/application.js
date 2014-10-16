@@ -9,8 +9,8 @@ $(document).ready(function() {
 
 function bindEvents () {
 
-  $('.new_todo_button').on('click', newTodo)
-  $('#todo').on('click', checkOrDelete)
+  $('.new-todo-button').on('click', newTodo)
+  $('#todo-list').on('click', checkOrDelete)
 
 }
 
@@ -42,7 +42,7 @@ function checkForUpdates() {
     var dbUpdate = new Date(JSON.parse(data).last_db_change)
     if (dbUpdate > lastUpdate) {
       lastUpdate = dbUpdate
-      $('#todo .todo').remove();
+      $('#todo-list .todo').remove();
       populateTodos();
     }
   });
@@ -54,12 +54,12 @@ function buildTodo(todoName, todoId, completed) {
   // Creates an jQueryDOMElement from the todoTemplate.
   var $todo = $(todoTemplate);
     // Modifies it's text to use the passed in todoName.
-  $todo.find('h3').text(todoName);
-  $todo.find('h3').parent().attr('id', todoId);
+  $todo.find('.todo-content').text(todoName);
+  $todo.find('.todo-content').parent().attr('id', todoId);
   if (completed) {
-    $todo.find('h3').addClass("complete");
+    $todo.find('.todo-content').addClass("completed");
   } else {
-    $todo.find('h3').removeClass("complete");
+    $todo.find('.todo-content').removeClass("completed");
   }
   // Returns the jQueryDOMElement to be used elsewhere.
   return $todo;
@@ -69,7 +69,7 @@ function buildTodo(todoName, todoId, completed) {
 
 function newTodo (event) {
   event.preventDefault();
-  var todoField = $('.new_todo_field')
+  var todoField = $('.new-todo-field')
   var todoContent = todoField.val();
   if (todoContent) {
     todoField.val('');
@@ -106,7 +106,7 @@ function addDOM (data) {
   var todoContent = todo.content;
   var todoCompleted = todo.completed;
   var todoBlock = buildTodo(todoContent, todoId, todoCompleted);
-  var todoContainer = $('#todo');
+  var todoContainer = $('#todo-list');
   todoContainer.prepend(todoBlock);
 }
 
@@ -120,9 +120,9 @@ function updateDOM (data) {
   var todoId = todo.id;
   var todoCompleted = todo.completed
   if (todoCompleted) {
-    $('#' + todoId + ' h3').addClass("complete")
+    $('#' + todoId + ' .todo-content').addClass("completed")
   } else {
-    $('#' + todoId + ' h3').removeClass("complete")
+    $('#' + todoId + ' .todo-content').removeClass("completed")
   }
 }
 
@@ -131,7 +131,7 @@ function populateDOM (data) {
   var todoContent = data.todo_content;
   var todoCompleted = data.completed;
   var todoBlock = buildTodo(todoContent, todoId, todoCompleted);
-  var todoContainer = $('#todo');
+  var todoContainer = $('#todo-list');
   todoContainer.prepend(todoBlock);
 }
 
